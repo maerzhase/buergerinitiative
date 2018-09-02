@@ -174,7 +174,7 @@ class Signup extends Component {
           </p>
         }
         <p className={classes.info}>
-          Ihre Informationen werden nicht an Dritte weitergeben und dienen lediglich zur Koordination der Bürgerinitiative. <a>Sie können sich hier auch vom Newsletter abmelden.</a>
+          Ihre Informationen werden nicht an Dritte weitergeben und dienen lediglich zur Koordination der Bürgerinitiative. <a href="?page=unsubscribe">Sie können sich hier auch vom Newsletter abmelden.</a>
         </p>
       </div>
     );

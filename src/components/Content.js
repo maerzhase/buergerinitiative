@@ -8,6 +8,7 @@ import Imprint from './Imprint';
 import { subscribe } from '../api';
 import Signup from './Signup';
 import Unsubscribe from './Unsubscribe';
+import Confirm from './Confirm';
 
 function parseQuery(queryString) {
   let query = {};
@@ -50,9 +51,10 @@ class Content extends React.Component { // eslint-disable-line
   state = {
     showImprint: false,
     page: null,
+    query: {},
   }
   componentDidMount() {
-    window.addEventListener("hashchange", this.handleUpdateRouting);
+    window.addEventListener('hashchange', this.handleUpdateRouting);
     this.handleUpdateRouting();
   }
   handleUpdateRouting = () => {
@@ -61,18 +63,42 @@ class Content extends React.Component { // eslint-disable-line
       const query = parseQuery(parsed.search)
       this.setState({
         page: query.page,
+        query,
       });
     }
   }
   renderPage = () => {
     const {
       page,
+      query,
     } = this.state;
     switch(page) {
       case 'unsubscribe':
         return <Unsubscribe />
+      case 'confirm':
+        return <Confirm uid={query.uid} />
       default:
-        return <Signup />
+        return (
+          <React.Fragment>
+            <Signup />
+            <h4>Material</h4>
+            <p>
+              Hier finden Sie alle Materialien der Bürgerinitiative.
+            </p>
+            <ul>
+              <li>
+                <a download href="/Unterschriftenliste.pdf">
+                  Unterschriftenliste: Ausdrucken und Unterschriften sammeln.
+                </a>
+              </li>
+              <li>
+                <a download href="/Anwohner-Aufruf-Lilienthalstr-Mit-Namen.pdf">
+                  Aushang zum Anwohnertreffen am 28. August
+                </a>
+              </li>
+            </ul>
+          </React.Fragment>
+        );
     }
   }
 
@@ -80,32 +106,17 @@ class Content extends React.Component { // eslint-disable-line
     const {
       classes,
     } = this.props;
-    console.log(this.state.page);
     return (
       <div className={classes.content}>
         <Html />
         <h1>
-          Bürgerinitiative zur Erneuerung der Lilienthalstraße
+          <a href="/" resetStyle="true">
+            Bürgerinitiative zur Erneuerung der Lilienthalstraße
+          </a>
         </h1>
         {
           this.renderPage()
         }
-        <h4>Material</h4>
-        <p>
-          Hier finden Sie alle Materialien der Bürgerinitiative.
-        </p>
-        <ul>
-          <li>
-            <a download href="/static/Unterschriftenliste.pdf">
-              Unterschriftenliste: Ausdrucken und Unterschriften sammeln.
-            </a>
-          </li>
-          <li>
-            <a download href="/static/Anwohner-Aufruf-Lilienthalstr-Mit-Namen.pdf">
-              Aushang zum Anwohnertreffen am 28. August
-            </a>
-          </li>
-        </ul>
       </div>
     );
   }

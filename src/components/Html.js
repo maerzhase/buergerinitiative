@@ -78,6 +78,12 @@ const styles = theme => ({ // eslint-disable-line
       '&:hover': {
         color: '#0277BD',
       },
+      '&[resetStyle]': {
+        color: 'inherit',
+        '&:hover': {
+          color: 'inherit',
+        },
+      },
     },
     'input, button': {
       fontSize: '1.2rem',

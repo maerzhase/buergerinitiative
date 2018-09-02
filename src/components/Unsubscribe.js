@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import injectSheet from 'react-jss'; // eslint-disable-line
+import { unsubscribe } from '../api';
 
 const styles = theme => ({ // eslint-disable-line
   container: {
@@ -23,9 +24,15 @@ class Unsubscribe extends React.Component {
   }
   state = {
     email: '',
+    sent: false,
   }
-  handleSubmit = () => {
-
+  handleSubmit = (e) => {
+    e.preventDefault();
+    unsubscribe(this.state.email).then(() => {
+      this.setState({
+        sent: true,
+      });
+    });
   }
   handleInput = (e) => {
     this.setState({
@@ -38,25 +45,38 @@ class Unsubscribe extends React.Component {
     } = this.props;
     const {
       email,
+      sent,
     } = this.state;
     return (
       <div className={classes.container}>
-        <h4>Newsletter Abmelden</h4>
-        <form
-          onSubmit={this.handleSubmit}
-          className={classes.form}
-        >
-          <input
-            required
-            type="email"
-            value={email}
-            placeholder="E-Mail Adresse"
-            onChange={this.handleInput}
-          />
-          <button>
-            Vom Newsletter abmelden
-          </button>
-        </form>
+        { !sent &&
+          <React.Fragment>
+            <h4>Vom Newsletter Abmelden</h4>
+            <form
+              onSubmit={this.handleSubmit}
+              className={classes.form}
+            >
+              <input
+                required
+                type="email"
+                value={email}
+                placeholder="E-Mail Adresse"
+                onChange={this.handleInput}
+              />
+              <button>
+                Vom Newsletter abmelden
+              </button>
+            </form>
+            <p>
+              Sie können sich <a href='?'>hier zum Newsletter anmelden</a>.
+            </p>
+          </React.Fragment>
+        }
+        { sent &&
+          <p>
+            Wir haben eine Bestätigung an <b>'{email}'</b> gesendet. <br /> <a href="/">Zurück zur Startseite</a>
+          </p>
+        }
       </div>
     );
   }
