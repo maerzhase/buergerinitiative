@@ -11,11 +11,12 @@ export const BASE_URL = 'https://buergerinitiative.lili16.de/lists/';
   subscribe: Subscribe
 */
 
-export const subscribe = (email, name) => {
+export const subscribe = (email, name, anschrift) => {
   const json = {
     email,
     emailconfirm: email,
     attribute1: name,
+    attribute2: anschrift,
     formtoken: '8eaedf333c9bef52cb1a3632d1766697',
     makeconfirmed: 0,
     'list[2]': 'signup',

@@ -58,6 +58,7 @@ class Signup extends Component {
     email: '',
     confirmemail: '',
     name: '',
+    anschrift: '',
     checkConfirmation: false,
     success: false,
   }
@@ -86,8 +87,13 @@ class Signup extends Component {
     });
   }
   handleSubmit = (e) => {
+    const {
+      email,
+      name,
+      anschrift,
+    } = this.state;
     e.preventDefault();
-    subscribe('markus@nand.io', 'Markus').then((response) => {
+    subscribe(email, name, anschrift).then((response) => {
       console.log(response);
       if (response.status === 200) {
         this.setState({
@@ -108,6 +114,7 @@ class Signup extends Component {
       confirmemail,
       name,
       success,
+      anschrift,
     } = this.state;
     return (
       <div className={classes.container}>
@@ -156,6 +163,14 @@ class Signup extends Component {
               placeholder="Name *"
               onChange={(e) => {
                 this.handleInputChange(e, 'name');
+              }}
+            />
+            <input
+              type="text"
+              value={anschrift}
+              placeholder="Anschrift"
+              onChange={(e) => {
+                this.handleInputChange(e, 'anschrift');
               }}
             />
             <button
