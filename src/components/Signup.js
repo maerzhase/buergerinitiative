@@ -122,7 +122,7 @@ class Signup extends Component {
           Newsletter Anmeldung
         </h4>
         <p>
-          Sie sind Anwohner der Lilienthalstraße und konnten beim ersten Treffen am 28. August nicht teilnehmen?
+          Sie sind Anwohner der Lilienthal- oder Züllichauer Str. und konnten beim ersten Treffen am 28. August nicht teilnehmen?
           Dann können Sie sich hier zum Newsletter anmelden.
         </p>
         {

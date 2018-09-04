@@ -111,7 +111,7 @@ class Content extends React.Component { // eslint-disable-line
         <Html />
         <h1>
           <a href="/" resetStyle="true">
-            Bürgerinitiative zur Erneuerung der Lilienthalstraße
+            Bürgerinitiative zur Erneuerung der Lilienthal/Züllichauer Str.
           </a>
         </h1>
         {
