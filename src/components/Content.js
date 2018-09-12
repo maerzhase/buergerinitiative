@@ -114,6 +114,13 @@ class Content extends React.Component { // eslint-disable-line
             Bürgerinitiative zur Erneuerung der Lilienthal/Züllichauer Str.
           </a>
         </h1>
+        <h4>
+          Umfrage
+        </h4>
+        <p>
+          Die Umfrage ist relevant dafür welche Interessen wir bei unserem Termin im Rathaus vertreten werden.
+          Sie läuft bis zum 29. September und wird anschließend von uns ausgewertet. <a target="_blank" href="https://markusmrzhase.typeform.com/to/pjAsXz">Hier gehts zur Umfrage</a>
+        </p>
         {
           this.renderPage()
         }
