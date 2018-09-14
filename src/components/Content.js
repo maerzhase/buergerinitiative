@@ -87,8 +87,18 @@ class Content extends React.Component { // eslint-disable-line
             </p>
             <ul>
               <li>
-                <a download href="/Unterschriftenliste.pdf">
-                  Unterschriftenliste: Ausdrucken und Unterschriften sammeln.
+                <a download href="/Umfrage-Meinungsbild-A5.pdf">
+                  Umfrage: Ausdrucken und noch bis 29 September abstimmen.
+                </a>
+              </li>
+              <li>
+                <a download href="/Aushang-Meinungsbild-A5.pdf">
+                  Aushang zur Umfrage.
+                </a>
+              </li>
+              <li>
+                <a download href="/Anwohner-Aufruf-Lilienthalstr-Mit-Namen.pdf">
+                  Aushang zum Anwohnertreffen am 28. August
                 </a>
               </li>
               <li>
