@@ -86,6 +86,34 @@ class Content extends React.Component {
             <p>Hier finden Sie alle Materialien der Bürgerinitiative.</p>
             <ul>
               <li>
+                <a download href="/30082026-Lilienthalstraße-Anwohner-Anschreiben.pdf">
+                  Anwohner-Anschreiben (August 2026)
+                </a>
+              </li>
+              <li>
+                <a download href="/241031_RS_Stn_Dir5_BI_Lilientalstraße.pdf">
+                  Antwort der Polizei an BI (Oktober) 2024)
+                </a>
+              </li>
+              <li>
+                <a
+                  download
+                  href="/Antwort auf Schreiben der Polizei-09-2024.rtf"
+                >
+                  Antwort der BI an die Polizei (September 2024)
+                </a>
+              </li>
+              <li>
+                <a download href="/BI-Lilien-Antwort-Polizei-08-2024-ocr.pdf">
+                  Antwort der Polizei an BI (August 2024)
+                </a>
+              </li>
+              <li>
+                <a download href="/Brief Bezirksamt und Polizei.rtf">
+                  Brief der BI an Polizei (August 2024)
+                </a>
+              </li>
+              <li>
                 <a download href="/BI-Lilienthalstraße-Protokoll-Juni-2024.pdf">
                   Protokoll Anwohnertreffen Juni 2024
                 </a>
